@@ -8,8 +8,8 @@
 #import "PlRewardsCenterViewController.h"
 #import "PeanutLabsManager.h"
 
-NSString *host_type2 = @"nomad/";
-NSString *rc_location = @"nomad/userGreeting.php?userId=";
+NSString *host_type2 = @"http://nomad/";
+NSString *rc_location = @"http://nomad/userGreeting.php?userId=";
 
 @interface PlRewardsCenterViewController ()
 

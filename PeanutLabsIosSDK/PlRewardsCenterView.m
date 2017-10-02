@@ -225,15 +225,11 @@ NSString *host_type = @"nomad";
     
     NSArray *fragments = [NSArray arrayWithObjects:@"offer", @"survey", @"open", nil];
     //NSString *host = request.URL.host;
-    NSLog(request);
+    NSLog(@"%@", request.URL.host);
     
     if ([request.URL.host isEqualToString:host_type] || [request.URL.host isEqualToString:host_type]) {
 
-        if ([[request.URL fragment] isEqualToString:@"open"]){
-            fragment = [request.URL fragment] ;
-            [self updateNavBarHeight:NO];
-            return NO;
-        } else if ([fragments containsObject:[request.URL fragment]]) {
+        if ([fragments containsObject:[request.URL fragment]]) {
 
             fragment = [request.URL fragment] ;
             [self updateNavBarHeight:YES];
