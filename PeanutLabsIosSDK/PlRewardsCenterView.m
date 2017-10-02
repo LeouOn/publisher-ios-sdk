@@ -293,7 +293,7 @@ NSString *host_type = @"nomad";
     
     self.toolbarTitle = [[UIBarButtonItem alloc] initWithCustomView:self.toolbarTitleLabel];
 
-    if ([host isEqualToString:host_type] || [host isEqualToString:host_type]) {
+    if ([host isEqualToString:host] || [host isEqualToString:host]) {
         if ([path isEqualToString:@"/userGreeting.php"]) {
             self.navBar.items = [NSArray arrayWithObjects: self.arrowButton, self.doneButton, nil];
         } else {
