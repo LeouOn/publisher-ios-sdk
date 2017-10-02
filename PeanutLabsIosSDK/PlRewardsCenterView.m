@@ -224,8 +224,11 @@ NSString *host_type = @"nomad";
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     
     NSArray *fragments = [NSArray arrayWithObjects:@"offer", @"survey", @"open", nil];
-
+    //NSString *host = request.URL.host;
+    NSLog(request);
+    
     if ([request.URL.host isEqualToString:host_type] || [request.URL.host isEqualToString:host_type]) {
+
         if ([[request.URL fragment] isEqualToString:@"open"]){
             fragment = [request.URL fragment] ;
             [self updateNavBarHeight:NO];

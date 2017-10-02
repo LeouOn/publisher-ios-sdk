@@ -81,6 +81,7 @@ NSString *rc_location = @"nomad/userGreeting.php?userId=";
     [self.plWebView setBaseUrl:url];
     self.view = self.plWebView;
     self.plWebView.delegate = self;
+    NSLog(url);
 }
 
 
