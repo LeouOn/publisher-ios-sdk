@@ -8,9 +8,10 @@
 #import "PlRewardsCenterView.h"
 #import "PlUtils.h"
 
-
+NSString *host_type = @"nomad";
 @implementation PlRewardsCenterView  {
     NSString *fragment;
+
 }
 
 - (void)resizeRewardsCenterView {
@@ -224,7 +225,7 @@
     
     NSArray *fragments = [NSArray arrayWithObjects:@"offer", @"survey", @"open", nil];
 
-    if ([request.URL.host isEqualToString:@"www.peanutlabs.com"] || [request.URL.host isEqualToString:@"peanutlabs.com"]) {
+    if ([request.URL.host isEqualToString:host_type] || [request.URL.host isEqualToString:host_type]) {
         if ([[request.URL fragment] isEqualToString:@"open"]){
             fragment = [request.URL fragment] ;
             [self updateNavBarHeight:NO];
@@ -292,7 +293,7 @@
     
     self.toolbarTitle = [[UIBarButtonItem alloc] initWithCustomView:self.toolbarTitleLabel];
 
-    if ([host isEqualToString:@"www.peanutlabs.com"] || [host isEqualToString:@"peanutlabs.com"]) {
+    if ([host isEqualToString:host_type] || [host isEqualToString:host_type]) {
         if ([path isEqualToString:@"/userGreeting.php"]) {
             self.navBar.items = [NSArray arrayWithObjects: self.arrowButton, self.doneButton, nil];
         } else {

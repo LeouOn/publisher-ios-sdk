@@ -8,6 +8,9 @@
 #import "PlRewardsCenterViewController.h"
 #import "PeanutLabsManager.h"
 
+NSString *host_type = @"nomad/";
+NSString *rc_location = @"nomad/userGreeting.php?userId=";
+
 @interface PlRewardsCenterViewController ()
 
 @end
@@ -22,7 +25,7 @@
     PeanutLabsManager *manager = [PeanutLabsManager getInstance];
     
     NSString *userId = [[manager userId] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
-    NSString *url = [[NSString alloc] initWithFormat:@"%@%@%@", @"http://www.peanutlabs.com/userGreeting.php?userId=", userId, @"&mobile_sdk=true&ref=ios_sdk"];
+    NSString *url = [[NSString alloc] initWithFormat:@"%@%@%@", rc_location, userId, @"&mobile_sdk=true&ref=ios_sdk"];
     NSPredicate *pred = nil;
     
     // injecting dob into url
